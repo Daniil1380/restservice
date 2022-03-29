@@ -1,5 +1,7 @@
 package com.daniil1380.restservice.dto;
 
+import java.util.List;
+
 public class User {
 
     private Integer uuid;
@@ -40,4 +42,5 @@ public class User {
 
     public User() {
     }
+
 }

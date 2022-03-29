@@ -6,6 +6,7 @@ public class Answer {
 
     private Integer id;
 
+
     public Answer(String answer, Integer id) {
         this.answer = answer;
         this.id = id;
