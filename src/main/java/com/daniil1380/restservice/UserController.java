@@ -19,17 +19,25 @@ public class UserController {
     public ResponseEntity<User> addUser(@RequestBody User user) {
         User logged = storeUserComponent.findUserByLogin(user.getLogin());
         if (logged != null) {
-            return ResponseEntity.badRequest().body(null);
+            if (!logged.getPassword().equals(user.getPassword())) {
+                System.out.println("Такой пользователь уже зарегистрирован, пароль неверен. Введите верный пароль");
+                return ResponseEntity.badRequest().body(null);
+            }
+            System.out.println("Пользователь зарегистрирован. Пароль введен верно!");
+            user.setUuid(logged.getUuid());
         }
-        var uuid = UUID.randomUUID();
-        user.setUuid(uuid.hashCode());
-        var loggedUser = new LoggedUser();
-        loggedUser.setUuid(user.getUuid());
-        loggedUser.setLogin(user.getLogin());
-        loggedUser.setPassword(user.getPassword());
-        loggedUser.setLastResult(0);
-        loggedUser.setStartedTest(-1);
-        storeUserComponent.addNewUser(loggedUser);
+        else {
+            var uuid = UUID.randomUUID();
+            user.setUuid((long) uuid.hashCode());
+            var loggedUser = new LoggedUser();
+            loggedUser.setUuid(user.getUuid());
+            loggedUser.setLogin(user.getLogin());
+            loggedUser.setPassword(user.getPassword());
+            loggedUser.setLastResult(0L);
+            loggedUser.setStartedTest(-1L);
+            storeUserComponent.addNewUser(loggedUser);
+            System.out.println("Пользователь не зарегистрирован, создан новый пользователь!");
+        }
         return ResponseEntity.ok(user);
     }
 

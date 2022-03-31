@@ -2,21 +2,21 @@ package com.daniil1380.restservice.dto;
 
 public class LoggedUser extends User {
 
-    private Integer lastResult;
+    private Long lastResult;
 
-    private Integer startedTest;
+    private Long startedTest;
 
-    private int[] pickedAnswerIds;
+    private Long[] pickedAnswerIds;
 
-    public Integer getLastResult() {
+    public Long getLastResult() {
         return lastResult;
     }
 
-    public void setLastResult(Integer lastResult) {
+    public void setLastResult(Long lastResult) {
         this.lastResult = lastResult;
     }
 
-    public LoggedUser(Integer uuid, String login, String password, Integer lastResult, Integer startedTest) {
+    public LoggedUser(Long uuid, String login, String password, Long lastResult, Long startedTest) {
         super(uuid, login, password);
         this.lastResult = lastResult;
         this.startedTest = startedTest;
@@ -25,21 +25,21 @@ public class LoggedUser extends User {
     public LoggedUser() {
     }
 
-    public Integer getStartedTest() {
+    public Long getStartedTest() {
         return startedTest;
     }
 
-    public void setStartedTest(Integer startedTest) {
+    public void setStartedTest(Long startedTest) {
         this.startedTest = startedTest;
     }
 
 
-    public int[] getPickedAnswerIds() {
+    public Long[] getPickedAnswerIds() {
         return pickedAnswerIds;
     }
 
 
-    public void setPickedAnswerIds(int[] pickedAnswerIds) {
+    public void setPickedAnswerIds(Long[] pickedAnswerIds) {
         this.pickedAnswerIds = pickedAnswerIds;
     }
 }

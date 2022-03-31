@@ -4,13 +4,13 @@ import java.util.List;
 
 public class User {
 
-    private Integer uuid;
+    private Long uuid;
 
     private String login;
 
     private String password;
 
-    public Integer getUuid() {
+    public Long getUuid() {
         return uuid;
     }
 
@@ -22,7 +22,7 @@ public class User {
         return password;
     }
 
-    public void setUuid(Integer uuid) {
+    public void setUuid(Long uuid) {
         this.uuid = uuid;
     }
 
@@ -34,7 +34,7 @@ public class User {
         this.password = password;
     }
 
-    public User(Integer uuid, String login, String password) {
+    public User(Long uuid, String login, String password) {
         this.uuid = uuid;
         this.login = login;
         this.password = password;

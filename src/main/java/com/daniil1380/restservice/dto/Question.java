@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Question {
 
-    private Integer id;
+    private Long id;
 
     private String question;
 
@@ -13,17 +13,17 @@ public class Question {
     public Question() {
     }
 
-    public Question(Integer id, String question, List<Answer> answers) {
+    public Question(Long id, String question, List<Answer> answers) {
         this.id = id;
         this.question = question;
         this.answers = answers;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

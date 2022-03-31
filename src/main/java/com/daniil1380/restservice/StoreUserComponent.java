@@ -11,7 +11,7 @@ public class StoreUserComponent {
 
     private final List<LoggedUser> loggedUsers = new ArrayList<>();
 
-    public LoggedUser findUserByUuid(Integer uuid) {
+    public LoggedUser findUserByUuid(Long uuid) {
         for (LoggedUser loggedUser : loggedUsers) {
             if (loggedUser.getUuid().equals(uuid)) {
                 return loggedUser;

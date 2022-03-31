@@ -1,45 +1,37 @@
 package com.daniil1380.restservice.dto;
 
-import java.util.List;
-
 public class Test {
 
-    private List<Question> questions;
+    private Long id;
 
-    private Integer id;
+    private String testName;
 
-    private List<Integer> idsOfCorrectAnswers;
-
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
+    public Test(Long id, String testName) {
+        this.id = id;
+        this.testName = testName;
     }
 
     public Test() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Test(List<Question> questions, Integer id, List<Integer> idsOfCorrectAnswers) {
-        this.questions = questions;
-        this.id = id;
-        this.idsOfCorrectAnswers = idsOfCorrectAnswers;
+    public String getTestName() {
+        return testName;
     }
 
-    public List<Integer> getIdsOfCorrectAnswers() {
-        return idsOfCorrectAnswers;
+    public void setTestName(String testName) {
+        this.testName = testName;
     }
 
-    public void setIdsOfCorrectAnswers(List<Integer> idsOfCorrectAnswers) {
-        this.idsOfCorrectAnswers = idsOfCorrectAnswers;
+    public Test(TestWithQuestions testWithQuestions){
+        this.id = testWithQuestions.getId();
+        this.testName = testWithQuestions.getTestName();
     }
 }
